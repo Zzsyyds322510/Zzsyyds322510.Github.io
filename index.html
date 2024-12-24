@@ -29,10 +29,14 @@
         }
 
         .blessing-text {
-            font-size: 1.5em; /* 设置动态中文祝福语更小字体 */
+            font-size: 1.0em; /* 设置动态中文祝福语更小字体 */
             margin-top: 20px;
             animation-delay: 4s;
             opacity: 0;
+            position: absolute;
+            top: 10px; /* 向下移动祝福语 */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .english-blessing {
@@ -41,6 +45,10 @@
             font-size: 1.5em; /* 设置动态英文祝福语更小字体 */
             opacity: 0;
             animation: fadeInEnglish 5s forwards;
+            position: absolute;
+            top: 210px; /* 向下移动英文祝福语 */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         /* 中文行书 */
@@ -75,6 +83,10 @@
             margin: 50px auto;
             width: 0;
             height: 0;
+            position: absolute;
+            top: 200px; /* 向下移动树的位置 */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .branch {
@@ -210,7 +222,7 @@
         /* 英文花体祝福语的位置 */
         .dear-text {
             position: absolute;
-            top: 20px;
+            top: 50px; /* 向下移动英文祝福语 */
             left: 20px;
             font-family: 'Great Vibes', cursive;
             font-size: 1em; /* 设置英文祝福语字体为原来的一半 */
@@ -220,7 +232,7 @@
         /* 中文常驻祝福语的位置 */
         .chinese-blessing {
             position: absolute;
-            top: 100px;
+            top: 120px; /* 向下移动中文祝福语 */
             left: 20px;
             font-family: 'KaiTi', serif;
             font-size: 1em; /* 设置中文常驻祝福语为原来的一半 */
