@@ -17,7 +17,7 @@
 
         h1, .blessing-text, .english-blessing {
             font-family: 'Courier New', Courier, monospace;
-            font-size: 2em;
+            font-size: 2.5em; /* 调大字体 */
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
             opacity: 0;
             animation: fadeIn 4s forwards;
@@ -29,16 +29,16 @@
         }
 
         .blessing-text {
-            font-size: 1.5em;
+            font-size: 3em; /* 设置动态中文祝福语更大字体 */
             margin-top: 20px;
             animation-delay: 4s;
             opacity: 0;
         }
 
         .english-blessing {
-            font-family: 'Great Vibes', cursive; /* 英文花体 */
+            font-family: 'Great Vibes', cursive;
             color: white;
-            font-size: 1.5em;
+            font-size: 3em; /* 设置动态英文祝福语更大字体 */
             opacity: 0;
             animation: fadeInEnglish 5s forwards;
         }
@@ -212,7 +212,17 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            font-family: 'Great Vibes', cursive; /* 使用花体字体 */
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em;
+            color: white;
+        }
+
+        /* 中文常驻祝福语的位置 */
+        .chinese-blessing {
+            position: absolute;
+            top: 100px;
+            left: 20px;
+            font-family: 'KaiTi', serif;
             font-size: 2em;
             color: white;
         }
@@ -225,9 +235,11 @@
     <div class="snowflakes-container"></div>
 
     <!-- 左上角英文祝福语 -->
-    <div class="dear-text">Dear Jiaxin Cao</div>
+    <div class="dear-text">Dear xxx</div>
 
-    <h1>圣诞节快乐！</h1>
+    <!-- 常驻中文祝福语 -->
+    <div class="chinese-blessing">圣诞节快乐！</div>
+
     <div class="blessing-text"></div>
     <div class="english-blessing blessing-english"></div>
 
@@ -273,11 +285,11 @@
         function displayNextBlessing() {
             if (i < blessings.length) {
                 if (i % 2 === 0) {
-                    blessingText.textContent = blessings[i];
-                    englishBlessing.textContent = '';
+                    blessingText.textContent = blessings[i]; // 中文
+                    englishBlessing.textContent = ''; // 清空英文祝福
                 } else {
-                    englishBlessing.textContent = blessings[i];
-                    blessingText.textContent = '';
+                    englishBlessing.textContent = blessings[i]; // 英文
+                    blessingText.textContent = ''; // 清空中文祝福
                 }
                 i++;
                 setTimeout(() => {
@@ -288,6 +300,7 @@
             }
         }
 
+        // 开始动态播放祝福语
         displayNextBlessing();
     </script>
 </body>
